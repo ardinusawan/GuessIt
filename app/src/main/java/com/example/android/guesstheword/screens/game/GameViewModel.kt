@@ -10,7 +10,7 @@ class GameViewModel : ViewModel() {
     var word = ""
 
     // The current score
-    private val _score: MutableLiveData<Int> = MutableLiveData()
+    private val _score = MutableLiveData<Int>()
     val score: LiveData<Int>
         get() = _score
 
@@ -74,12 +74,12 @@ class GameViewModel : ViewModel() {
     /** Methods for buttons presses **/
 
     fun onSkip() {
-        _score.value = (score.value)?.minus(1)
+        _score.value = (_score.value)?.minus(1)
         nextWord()
     }
 
     fun onCorrect() {
-        _score.value = (score.value)?.plus(1)
+        _score.value = (_score.value)?.plus(1)
         nextWord()
     }
 }
