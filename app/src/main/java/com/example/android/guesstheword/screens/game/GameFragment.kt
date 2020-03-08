@@ -64,7 +64,7 @@ class GameFragment : Fragment() {
         })
 
         viewModel.word.observe(this, Observer { newWord ->
-            binding.wordText.text = viewModel.word.value
+            binding.wordText.text = newWord
         })
 
         viewModel.eventGameFinish.observe(this, Observer { isFinish ->
